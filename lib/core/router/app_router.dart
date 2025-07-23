@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:pokedex_app/core/widgets/main_layout.dart';
+import 'package:pokedex_app/features/pokemon/presentation/screens/pokemon_list_screend.dart';
 import 'package:pokedex_app/features/shared/screens/error_page.dart';
 
 final appRouterProvider = Provider<GoRouter>((ref) {
@@ -9,16 +10,14 @@ final appRouterProvider = Provider<GoRouter>((ref) {
     initialLocation: '/',
     routes: [
       ShellRoute(
-        builder: (context, state, child){
+        builder: (context, state, child) {
           return MainLayout(child: child);
         },
-        routes: 
-        [
+        routes: [
           GoRoute(
-            path: '/',
-            name: 'home',
-            builder: (context, state) => const SizedBox.shrink()
-          ),
+              path: '/',
+              name: 'home',
+              builder: (context, state) => PokemonListScreend()),
         ],
       ),
     ],

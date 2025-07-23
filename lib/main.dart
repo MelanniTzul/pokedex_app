@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pokedex_app/core/router/app_router.dart';
+import 'package:pokedex_app/core/theme/app_theme.dart';
 
 void main() {
   runApp(const ProviderScope(child: PokedexApp()));
@@ -15,9 +16,8 @@ class PokedexApp extends ConsumerWidget {
     return MaterialApp.router(
       title: 'Pokedex App',
       debugShowCheckedModeBanner: false,
+      theme: AppTheme().getTheme(),
       routerConfig: router,
     );
   }
 }
-
-

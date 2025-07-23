@@ -6,16 +6,13 @@ class ErrorPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final textStyle = Theme.of(context).textTheme;
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: const Text(
+        title: Text(
           'Ruta Inexistente',
-          style: TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
-          ),
+          style: textStyle.titleMedium?.copyWith(),
         ),
       ),
       body: Center(
@@ -28,14 +25,12 @@ class ErrorPage extends StatelessWidget {
               height: 214,
             ),
             const Text('Página no encontrada',
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            )),
-            const Text('Por favor, comunicate con el administrador de la aplicación.',
-            style: TextStyle(
-              fontSize: 14,
-            )),
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                )),
+            Text('Por favor, comunicate con el administrador de la aplicación.',
+                style: textStyle.bodyMedium?.copyWith()),
             GestureDetector(
               onTap: () => context.go('/'),
               child: const Text(
