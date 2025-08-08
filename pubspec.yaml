@@ -31,3 +31,7 @@ flutter:
   assets:
     - assets/nav_bar/
     - assets/icons/
+    - assets/pokemons/
+    - assets/pokemon_types_chips/
+    - assets/pokemons_types/
+    - assets/habilities/

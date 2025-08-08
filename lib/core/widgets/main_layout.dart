@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pokedex_app/core/widgets/pokedex_bottom_navbar.dart';
+import 'package:pokedex_app/core/widgets/pokedex_bottom_nav_bar.dart';
 
 class MainLayout extends StatelessWidget {
   final Widget child;

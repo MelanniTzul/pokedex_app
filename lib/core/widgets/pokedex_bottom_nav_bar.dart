@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
 class PokedexBottomNavbar extends StatelessWidget {
@@ -9,8 +9,11 @@ class PokedexBottomNavbar extends StatelessWidget {
   Widget build(BuildContext context) {
     final currentLocation = GoRouterState.of(context).uri.toString();
     return Container(
-      decoration:
-          const BoxDecoration(boxShadow: [BoxShadow(color: Colors.white)]),
+      decoration: const BoxDecoration(boxShadow: [
+        BoxShadow(
+            //! # -> 0xFF
+            color: Colors.white)
+      ]),
       child: BottomNavigationBar(
           currentIndex: _calculateSelectedIndex(currentLocation),
           onTap: (index) => _onTapItem(context, index),
@@ -45,11 +48,14 @@ class PokedexBottomNavbar extends StatelessWidget {
 
   Widget _buildIconBar(String icon) {
     final String iconPath = 'assets/nav_bar/';
-    return SvgPicture.asset('${iconPath + icon}.svg');
+    return SvgPicture.asset('${iconPath}${icon}.svg');
   }
 
   int _calculateSelectedIndex(String location) {
     if (location == '/') return 0;
+    if (location.startsWith('/search')) return 1;
+    if (location.startsWith('/favorites')) return 2;
+    if (location.startsWith('/profile')) return 3;
     return 0;
   }
 
@@ -57,6 +63,7 @@ class PokedexBottomNavbar extends StatelessWidget {
     switch (index) {
       case 0:
         context.go('/');
+        break;
       case 1:
         context.go('/search');
         break;

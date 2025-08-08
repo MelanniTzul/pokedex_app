@@ -8,11 +8,12 @@ class ErrorPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final textStyle = Theme.of(context).textTheme;
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text(
           'Ruta Inexistente',
-          style: textStyle.titleMedium?.copyWith(),
+          style: textStyle.titleLarge,
         ),
       ),
       body: Center(
@@ -30,7 +31,7 @@ class ErrorPage extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 )),
             Text('Por favor, comunicate con el administrador de la aplicación.',
-                style: textStyle.bodyMedium?.copyWith()),
+                style: textStyle.bodyMedium),
             GestureDetector(
               onTap: () => context.go('/'),
               child: const Text(

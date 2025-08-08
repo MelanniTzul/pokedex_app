@@ -10,8 +10,12 @@ class AppTheme {
         useMaterial3: true,
         colorSchemeSeed: colorSeed,
         scaffoldBackgroundColor: scaffoldBackgroundColor,
-
-        // Textos
+        // bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+        //   backgroundColor: scaffoldBackgroundColor,
+        //   selectedItemColor: colorSeed,
+        //   unselectedItemColor: Colors.grey,
+        // ),
+        // // Textos
         textTheme: TextTheme(
           titleLarge: GoogleFonts.nunito().copyWith(
             fontSize: 40,
